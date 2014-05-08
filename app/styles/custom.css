@@ -360,7 +360,7 @@ a.auth
 }
 
 /*DATAPRESENTAITE*/
-.row .dataOverview
+.row.dataOverview
 {
 	padding:60px 0 50px;
 	border:1px solid #dbdbdb;
@@ -368,7 +368,7 @@ a.auth
 	font-family:'Open Sans',sans-serif
 }
 
-.row .dataOverview table.table td
+.row.dataOverview table.table td
 {
 	font-size:4em;
 	color:#6F6F6F
