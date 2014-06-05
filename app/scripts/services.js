@@ -42,6 +42,7 @@ factory('wocoRepository', function($http) {
         },
         getSpecificData: function (specificData){
             var specificDataArray = [specificData.woning,specificData.omgeving,specificData.corporatie,specificData.woonsituatie];
+            console.log(specificDataArray)
             this.returnSpecificList = function(){
                 return specificDataArray;
             }

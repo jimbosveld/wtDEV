@@ -20,7 +20,7 @@ p
 body h1,body h2,body h3
 {
 	font-weight:300;
-	color:#000
+	/*color:#000*/
 }
 
 a
@@ -279,59 +279,46 @@ a.auth
 }
 
 /*VOORWIE*/
-.myAccordion
-{
-	border-radius:0!important;
-	box-shadow:none!important
+
+.cards {
+    background: #ffffff;
+    /*border-radius: 3px;*/
+    margin: 3px;
+    box-shadow: 0px 1px 3px rgba(0,0,0,.1);
+    cursor: pointer;
+    top: 0;
+    transition: background 0.3s, color 0.1s, height 1s;
 }
 
-.myAccordion p
-{
-	font-weight:300
+.cards:hover {
+    background: RGBA(249,121,40,1);
+    color: #ffffff;
 }
 
-.panel-body
-{
-	background:#fafafa
+.cards:active {
+    box-shadow: inset 0px 1px 3px rgba(0,0,0,.2);
+    background: RGBA(239, 117, 41,1);
 }
 
-.panel-heading
-{
-	height:130px
+.cards p {
+    font-size: 1em;
 }
 
-.panel:nth-of-type(1) .panel-heading
-{
-	background-image:url(/images/wiePage/wieBack1.png)
+.voorWieInfo {
+    background: RGBA(249,121,40,1);
+    padding: 10px;
+    color:#ffffff;
+    /*border-radius: 3px;*/
+    box-shadow: 0px 1px 3px rgba(0,0,0,.1);
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 1.2em;
 }
 
-.panel:nth-of-type(2) .panel-heading
-{
-	background-image:url(/images/wiePage/wieBack2.png)
-}
-
-.panel:nth-of-type(3) .panel-heading
-{
-	background-image:url(/images/wiePage/wieBack3.png)
-}
-
-.panel:nth-of-type(4) .panel-heading
-{
-	background-image:url(/images/wiePage/wieBack4.png)
-}
-
-.panel-heading a
-{
-	font-weight:600;
-	text-transform:uppercase;
-	color:#fff!important;
-	background-color:rgba(199,199,199,0.8);
-	padding:0 5px;
-	border-radius:3px;
-	font-size:1em;
-	text-decoration:none!important;
-	cursor:pointer;
-	margin-left:-8px!important
+.voorWieImage {
+    text-align: center;
+    margin: 3px;
+    padding: 10px;
 }
 
 /*ZOEKEN*/
@@ -372,4 +359,51 @@ a.auth
 {
 	font-size:4em;
 	color:#6F6F6F
+}
+
+/*ANIMATIONS*/
+
+.fadeIn.ng-enter{
+    transition: 0.2s;
+    opacity: 0;
+}
+
+.fadeIn.ng-enter-active {
+    opacity: 1;
+}
+
+/*TRANSITIONS VOOR ZOEKBALK SLIDEDOWN*/
+
+.slideDown.ng-hide-add, .slideDown.ng-hide-remove {
+    transition:opacity 0.6s linear, height 0.5s linear;
+    display:block!important;
+}
+
+.slideDown.ng-hide-add.ng-hide-add-active,
+.slideDown.ng-hide-remove {
+    height:0;
+    opacity: 0;
+}
+
+.slideDown.ng-hide-add,
+.slideDown.ng-hide-remove.ng-hide-remove-active {
+    height:250px;
+    opacity: 1;
+}
+
+/*ZOEKBALK*/
+
+.expandSearchBox {
+    background: #cccccc;
+    height: 36px;
+    position: absolute;
+    padding: 7px 0 0 0;
+    width: 100%;
+    top: -40px;
+    margin-left: -15px !important;
+}
+
+.expandSearchBox a {
+    text-decoration: none;
+    color: #6F6F6F;
 }

@@ -40,6 +40,9 @@
             <li>
                 <a href="#/OverOns">Over ons</a>
             </li>
+            <li>
+                <a href="#/admin">admin</a>
+            </li>
             <li ng-cloak ng-controller="AuthCtrl">
                 <a ng-show="auth.user" class="auth" href="#/admin">ingelogd als {{auth.user.email}}</a>
             </li>
@@ -47,7 +50,7 @@
     </div>
 </nav>
 <div class="spacer"></div>
-<div ng-view class="col-sm-12 container-fluid"></div>
+<div ng-view class="col-sm-12 container-fluid fadeIn"></div>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 <script>
@@ -83,6 +86,7 @@
 <script src="bower_components/nnnick-chartjs/Chart.min.js"></script>
 <script src="bower_components/angles/angles.js"></script>
 <script src="bower_components/chartjs/Chart.min.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 

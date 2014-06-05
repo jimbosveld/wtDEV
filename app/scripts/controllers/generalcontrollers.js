@@ -9,9 +9,21 @@ angular.module('myApp.controllers', [])
     ])
     .controller('VoorWieCtrl', ['$scope', '$http',
         function($scope, $http) {
-            $scope.oneAtATime = true;
+            var toCollapse = document.getElementsByClassName('toCollapse');
+            var toSlideUp = document.getElementsByClassName('toSlideUp');
+            var toBounceOut = document.getElementsByClassName('toBounceOut');
             $http.get('/json/voorwie.json').success(function(data) {
                 $scope.cards = data;
+            })
+            $scope.voorWieId = null;
+            $scope.selectVoorWie = function(textLong){
+                $scope.voorWieId = [textLong];
+                $(toCollapse).fadeTo(100,0.01).delay(500).animate({marginTop:'-40px'});
+                $(toSlideUp).delay(500).animate({marginTop:'-110px'});
+                $(toBounceOut).addClass('flipOutX').delay(500).animate({marginTop:'-140px'});
+            }
+            $scope.$watch('voorWieId',function(n,o){
+                $scope.currentVoorWieTitle = n;
             })
         }
     ])
@@ -103,7 +115,6 @@ angular.module('myApp.controllers', [])
             wocoRepository.setUrl($scope.selectedCorporatieObjectId).success(function(data) {
                 $scope.specificCorporatieObject = data
             });
-//            wocoRepository.getSpecificData($scope.selectedCorporatieObject);
         }
     })
     .controller('barChartCtrl', function($scope, wocoRepository,chartFactory){
@@ -131,4 +142,50 @@ angular.module('myApp.controllers', [])
             };
             $scope.options = chartFactory.getChartOptions();
         });
-    });
+    })
+
+//BOUWNU TESTER
+
+    .controller('bouwNuFirebase', ['$scope', '$firebase',
+        function($scope, $firebase) {
+            var fb = new Firebase('https://incandescent-fire-2314.firebaseio.com');
+
+//            HIER HAAL JE ALLE FIREBASE OBJECTEN OP
+
+            $scope.allAannemers = $firebase(fb.child('aannemers'));
+            $scope.allProjecten = $firebase(fb.child('projecten'));
+            $scope.allProjectlocaties = $firebase(fb.child('projecten').child('project1').child('projectlocatie'));
+//            $scope.allProjectlocaties.on('value', function(thisParticularLocatie){
+//                $scope.thisParticularLocatie = thisParticularLocatie.val()
+//                console.log($scope.thisParticularLocatie)
+//            })
+//            console.log($scope.allProjectlocaties);
+
+            $scope.getProjectsForAannemer = function(id){
+                var aannemerSelectedRef = fb.child('aannemers').child('aannemer' + id);
+                var aannemerSelectedProjectsRef = aannemerSelectedRef.child('projecten');
+                aannemerSelectedProjectsRef.once('value',function(projectenSnapshot){
+                    var projecten = projectenSnapshot.val();
+                    for (var i = projecten.length; i >= 0; i--) {
+                        var projectenRef = new Firebase("https://incandescent-fire-2314.firebaseio.com/projecten/project" + i)
+                        projectenRef.once('value',function(projectenContentSnapshot){
+                            $scope.projectenContent = projectenContentSnapshot.val();
+                            $scope.projectenIds = projectenContentSnapshot.name();
+                        })
+                    }
+                })
+            };
+            $scope.addAannemer = function() {
+                $scope.allAannemers({
+                    adres: $scope.adres,
+                    naam: $scope.naam,
+                    profiel: $scope.profiel,
+                    stad: $scope.stad
+                });
+                $scope.adres = "";
+                $scope.naam = "";
+                $scope.profiel = "";
+                $scope.stad = "";
+            }
+        }
+    ]);
