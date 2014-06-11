@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="511d5cd2-11ca-4b17-9c66-675a16ca2f34" name="Default" comment="">
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/generalcontrollers.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/generalcontrollers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home.html" afterPath="$PROJECT_DIR$/app/views/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/services.js" afterPath="$PROJECT_DIR$/app/scripts/services.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/zoeken.html" afterPath="$PROJECT_DIR$/app/views/zoeken.html" />
+>>>>>>> bouwnu
     </list>
     <ignored path="wtDEV.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,11 +36,19 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
+<<<<<<< HEAD
           <file leaf-file-name="generalcontrollers.js" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/scripts/controllers/generalcontrollers.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.29359823" vertical-offset="2454" max-vertical-offset="3655">
                   <caret line="160" column="15" selection-start-line="160" selection-start-column="15" selection-end-line="160" selection-end-column="15" />
+=======
+          <file leaf-file-name="generalcontrollers.js" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/scripts/controllers/generalcontrollers.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.6412661" vertical-offset="2802" max-vertical-offset="3655">
+                  <caret line="197" column="37" selection-start-line="197" selection-start-column="37" selection-end-line="197" selection-end-column="37" />
+>>>>>>> bouwnu
                   <folding />
                 </state>
               </provider>
@@ -40,8 +57,13 @@
           <file leaf-file-name="zoeken.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/zoeken.html">
               <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
                 <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1360">
                   <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+=======
+                <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1377">
+                  <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+>>>>>>> bouwnu
                   <folding />
                 </state>
               </provider>
@@ -51,11 +73,19 @@
       </split-first>
       <split-second>
         <leaf>
+<<<<<<< HEAD
           <file leaf-file-name="services.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/scripts/services.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.16416308" vertical-offset="340" max-vertical-offset="2295">
                   <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+=======
+          <file leaf-file-name="services.js" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/scripts/services.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="1.056272" vertical-offset="0" max-vertical-offset="2329">
+                  <caret line="53" column="35" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
+>>>>>>> bouwnu
                   <folding />
                 </state>
               </provider>
@@ -94,8 +124,13 @@
         <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/bower_components/angular-bootstrap/ui-bootstrap.js" />
         <option value="$PROJECT_DIR$/app/views/bouwnu.html" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/app/views/zoeken.html" />
         <option value="$PROJECT_DIR$/app/scripts/services.js" />
+=======
+        <option value="$PROJECT_DIR$/app/scripts/services.js" />
+        <option value="$PROJECT_DIR$/app/views/zoeken.html" />
+>>>>>>> bouwnu
         <option value="$PROJECT_DIR$/app/scripts/controllers/generalcontrollers.js" />
       </list>
     </option>
@@ -456,11 +491,15 @@
       <created>1401975795174</created>
       <updated>1401975795174</updated>
     </task>
+<<<<<<< HEAD
     <task id="LOCAL-00002" summary="some controller stuff">
       <created>1402477963463</created>
       <updated>1402477963463</updated>
     </task>
     <option name="localTasksCounter" value="3" />
+=======
+    <option name="localTasksCounter" value="2" />
+>>>>>>> bouwnu
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -485,12 +524,20 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="2498" height="1418" extended-state="0" />
+<<<<<<< HEAD
     <editor active="true" />
     <layout>
       <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3433735" sideWeight="0.49963155" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2662142" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32680723" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+=======
+    <editor active="false" />
+    <layout>
+      <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3433735" sideWeight="0.49963155" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32680723" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> bouwnu
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298193" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24981578" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13645539" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -503,6 +550,10 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3295626" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+=======
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+>>>>>>> bouwnu
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2673193" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -525,8 +576,12 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="big commit" />
+<<<<<<< HEAD
     <MESSAGE value="some controller stuff" />
     <option name="LAST_COMMIT_MESSAGE" value="some controller stuff" />
+=======
+    <option name="LAST_COMMIT_MESSAGE" value="big commit" />
+>>>>>>> bouwnu
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -829,24 +884,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/zoeken.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1360">
           <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-          <folding />
+=======
+        <state vertical-scroll-proportion="0.16625917" vertical-offset="0" max-vertical-offset="1037">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/generalcontrollers.js">
+    <entry file="file://$PROJECT_DIR$/app/views/zoeken.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29359823" vertical-offset="2454" max-vertical-offset="3655">
-          <caret line="160" column="15" selection-start-line="160" selection-start-column="15" selection-end-line="160" selection-end-column="15" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1377">
+          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+>>>>>>> bouwnu
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/services.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state vertical-scroll-proportion="0.29359823" vertical-offset="2454" max-vertical-offset="3655">
+          <caret line="160" column="15" selection-start-line="160" selection-start-column="15" selection-end-line="160" selection-end-column="15" />
+=======
+        <state vertical-scroll-proportion="1.056272" vertical-offset="0" max-vertical-offset="2329">
+          <caret line="53" column="35" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
+>>>>>>> bouwnu
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/app/scripts/services.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16416308" vertical-offset="340" max-vertical-offset="2295">
           <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/generalcontrollers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6412661" vertical-offset="2802" max-vertical-offset="3655">
+          <caret line="197" column="37" selection-start-line="197" selection-start-column="37" selection-end-line="197" selection-end-column="37" />
+>>>>>>> bouwnu
           <folding />
         </state>
       </provider>

@@ -30,14 +30,16 @@ factory('wocoRepository', function($http) {
                 averagesAllWocosOmgeving += rankedWocosObject[i].omgeving / rankedWocosObject.length;
                 averagesAllWocosCorporatie += rankedWocosObject[i].corporatie / rankedWocosObject.length;
                 averagesAllWocosWoonsituatie += rankedWocosObject[i].woonsituatie / rankedWocosObject.length;
-
             }
 
             var averagesList = [averagesAllWocosWoning, averagesAllWocosOmgeving, averagesAllWocosCorporatie, averagesAllWocosWoonsituatie];
 
+
             this.returnAveragesList = function() {
                 return averagesList;
-            }
+            };
+
+
 
         },
         getSpecificData: function (specificData){
