@@ -29,28 +29,33 @@ angular.module('myApp.controllers', [])
     ])
     .controller('timeLineCtrl', ['$scope', '$firebase',
         function($scope, $firebase) {
-            var ref = new Firebase("https://glaring-fire-5859.firebaseio.com");
-            $scope.posts = $firebase(ref);
+            var fb = new Firebase("https://glaring-fire-5859.firebaseio.com");
+            $scope.posts = $firebase(fb.child('posts'));
+//            $scope.postIds = $scope.posts.once('value',function(idSnapshot){
+//                var id = idSnapshot.name();
+//                console.log(id);
+//            });
             $scope.addPost = function() {
                 $scope.posts.$add({
                     title: $scope.newTitle,
                     text: $scope.newPost,
                     time: $scope.newTime
-                })
+                });
                 $scope.newTitle = "";
                 $scope.newPost = "";
                 $scope.newTime = "";
-            }
+            };
             $scope.postRemove = function(key) {
                 $scope.posts.$remove(key);
-            }
+            };
+
         }
     ])
     .controller('AuthCtrl', [
         '$scope', '$rootScope', '$firebaseAuth',
         function($scope, $rootScope, $firebaseAuth) {
-            var ref = new Firebase('https://glaring-fire-5859.firebaseio.com/');
-            $rootScope.auth = $firebaseAuth(ref);
+            var fb = new Firebase('https://glaring-fire-5859.firebaseio.com/');
+            $rootScope.auth = $firebaseAuth(fb);
             $scope.signIn = function() {
                 $rootScope.auth.$login('password', {
                     email: $scope.email,
@@ -143,6 +148,15 @@ angular.module('myApp.controllers', [])
             $scope.options = chartFactory.getChartOptions();
         });
     })
+    .controller('getTotalN', function ($scope, wocoRepository){
+        wocoRepository.getAverages().success(function(data){
+            $scope.wocoSet = data;
+            $scope.totalN = 0;
+            for (var i = 0; $scope.wocoSet.length; i++) {
+                $scope.totalN += $scope.wocoSet[i].n;
+            }
+        })
+    })
 
 //BOUWNU TESTER
 
@@ -152,14 +166,19 @@ angular.module('myApp.controllers', [])
 
 //            HIER HAAL JE ALLE FIREBASE OBJECTEN OP
 
-            $scope.allAannemers = $firebase(fb.child('aannemers'));
-            $scope.allProjecten = $firebase(fb.child('projecten'));
+            fb.child('aannemers').once('value', function (aannemerSnapshot){
+                $scope.allAannemers = aannemerSnapshot.val();
+                console.log($scope.allAannemers);
+            })
+
+            fb.child('projecten').once('value', function (projectenSnapshot){
+                $scope.allProjecten = projectenSnapshot.val();
+                console.log($scope.allProjecten);
+            })
+
             $scope.allProjectlocaties = $firebase(fb.child('projecten').child('project1').child('projectlocatie'));
-//            $scope.allProjectlocaties.on('value', function(thisParticularLocatie){
-//                $scope.thisParticularLocatie = thisParticularLocatie.val()
-//                console.log($scope.thisParticularLocatie)
-//            })
-//            console.log($scope.allProjectlocaties);
+
+//
 
             $scope.getProjectsForAannemer = function(id){
                 var aannemerSelectedRef = fb.child('aannemers').child('aannemer' + id);

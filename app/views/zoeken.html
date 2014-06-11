@@ -1,12 +1,13 @@
-<div class="row" ng-controller="barChartCtrl">
+<div class="row" ng-controller="getTotalN">
     <div class="col-sm-5">
-        <chartjs width="MyChart.width" height="MyChart.height" data="MyChart.data" options="MyChart.options" is-type="Bar"></chartjs>
+        <li ng-repeat="n in gegevensRankedWocos">{{n.naam}} - {{n.n}}</li>
+        <li>Totaal - {{totalN}}</li>
     </div>
 </div>
 <div class="row">
     <div class="col-sm-4 col-sm-offset-4">
         <div class="form-group zoekbox">
-            <input ng-model="asyncSelected" typeahead="corporatie.naam as corporatie.naam for corporatie in gegevensAllWocos | filter:$viewValue | limitTo:10" typeahead-on-select="setId($item)" typeahead-editable="false" type="text" class="form-control input-lg fadeIn" placeholder="zoek hier je corporatie">
+            <input accessibleForm ng-model="asyncSelected" typeahead="corporatie.naam as corporatie.naam for corporatie in gegevensAllWocos | filter:$viewValue | limitTo:10" typeahead-on-select="setId($item)" typeahead-editable="false" type="text" class="form-control input-lg fadeIn" placeholder="zoek hier je corporatie" id="search">
         </div>
     </div>
 </div>
