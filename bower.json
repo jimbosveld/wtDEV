@@ -10,17 +10,29 @@
     "angular-resource": "1.2.15",
     "angular-cookies": "1.2.15",
     "angular-sanitize": "1.2.15",
-    "angular-route": "1.2.15",
     "angular-bootstrap": "0.11.0",
     "firebase": "1.0.15",
-    "angularfire": "0.5.0",
-    "firebase-simple-login": "1.4.1",
-    "angles": "*",
+    "angularfire": "~0.8.2",
+    "firebase-simple-login": "1.6.3",
     "chartjs": "*",
-    "angular-animate": "~1.2.16"
+    "angular-animate": "~1.2.16",
+    "angular-bootstrap-affix": "~0.2.1",
+    "ui-router": "~0.2.10",
+    "highcharts-ng": "0.0.6",
+    "highcharts": "4.0.3",
+    "fitvids": "~1.1.0",
+    "angular-truncate": "*",
+    "ngmap": "~0.21.0",
+    "angular-scroll": "~0.6.2",
+    "jquery-ui": "~1.11.1",
+    "donut-hack":"0.1.5"
+
   },
   "devDependencies": {
     "angular-mocks": "1.2.15",
     "angular-scenario": "1.2.15"
+  },
+  "resolutions": {
+    "angular": "1.2.16"
   }
 }

@@ -18,6 +18,15 @@ module.exports = function (grunt) {
   // Define the configuration for all the tasks
   grunt.initConfig({
 
+      csscomb: {
+          options: {
+              // Task-specific options go here.
+          },
+          your_target:
+              'styles/custom.css'
+
+      },
+
     // Project settings
     yeoman: {
       // configurable paths
@@ -66,7 +75,7 @@ module.exports = function (grunt) {
       options: {
         port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: 'localhost',
+        hostname: '0.0.0.0',
         livereload: 35729
       },
       livereload: {
@@ -339,7 +348,10 @@ module.exports = function (grunt) {
         singleRun: true
       }
     }
+
   });
+
+
 
 
   grunt.registerTask('serve', function (target) {
@@ -392,4 +404,6 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
+  grunt.loadNpmTasks('grunt-csscomb','grunt-uncss');
 };

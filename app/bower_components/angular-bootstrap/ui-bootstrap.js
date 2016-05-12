@@ -866,7 +866,7 @@ angular.module('ui.bootstrap.position', [])
     return {
       /**
        * Provides read-only equivalent of jQuery's position function:
-       * http://api.jquery.com/position/
+       * http://controllers.jquery.com/position/
        */
       position: function (element) {
         var elBCR = this.offset(element);
@@ -889,7 +889,7 @@ angular.module('ui.bootstrap.position', [])
 
       /**
        * Provides read-only equivalent of jQuery's offset function:
-       * http://api.jquery.com/offset/
+       * http://controllers.jquery.com/offset/
        */
       offset: function (element) {
         var boundingClientRect = element[0].getBoundingClientRect();

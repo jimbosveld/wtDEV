@@ -1,0 +1,59 @@
+<div ng-if="currentReviews">
+    <div class="col-md-6 mobile-filter visible-xs">
+        <a class="filter" href="" ng-click="predicate = 'corporatie'; reverse=!reverse; up1=!up1">corporatie</a>
+        <a class="filter" href="" ng-click="predicate = 'woning'; reverse=!reverse; up1=!up1">woning</a>
+        <a class="filter" href="" ng-click="predicate = 'omgeving'; reverse=!reverse; up1=!up1">omgeving</a>
+        <a class="filter" href="" ng-click="predicate = 'woonsituatie'; reverse=!reverse; up1=!up1">woonsituatie</a>
+    </div>
+    <div class="col-md-6">
+        <div ng-class="{'hidden':$stateParams.interviewid != review.id && $stateParams.interviewid != ''}"
+             class="panel panel-default animate" id="{{ review.id }}"
+             ng-repeat="review in FilteredCurrentReviews = (currentReviews | filter:reviewFilter) | orderBy:predicate:reverse | reverse ">
+            <div class="panel-heading">
+                <ul class="row ratingRow">
+                    <wn-rating-badge wn-review-title="corporatie" wn-review-var="review.corporatie"></wn-rating-badge>
+                    <wn-rating-badge wn-review-title="woning" wn-review-var="review.woning"></wn-rating-badge>
+                    <wn-rating-badge wn-review-title="omgeving" wn-review-var="review.omgeving"></wn-rating-badge>
+                    <wn-rating-badge wn-review-title="woonsituatie" wn-review-var="review.woonsituatie"></wn-rating-badge>
+                </ul>
+            </div>
+            <div class="panel-body review-panel">
+                <p class="row">
+                    <span ng-show="review.review.length > 1">{{review.review}}</span>
+                    <span ng-show="review.review.length < 2 || !review.review">Geen review achtergelaten</span>
+                </p>
+                <span class="review-date">{{ review.maand | monthToString}} {{ review.jaar | yearToString }}</span>
+            </div>
+        </div>
+        <span ng-if="FilteredCurrentReviews.length == 0">Geen resultaten</span>
+    </div>
+    <div class="col-md-2">
+        <div class="panel panel-default panel-filter">
+            <div class="panel-body">
+                <span class="filter">sorteer</span>
+                <ul style="padding-left: 0">
+                    <li>
+                        <a class="filter" href="" ng-click="predicate = 'corporatie'; reverse=!reverse; up1=!up1">corporatie</a>
+                    </li>
+                    <li>
+                        <a class="filter" href="" ng-click="predicate = 'woning'; reverse=!reverse; up1=!up1">woning</a>
+                    </li>
+                    <li>
+                        <a class="filter" href=""
+                           ng-click="predicate = 'omgeving'; reverse=!reverse; up1=!up1">omgeving</a>
+                    </li>
+                    <li>
+                        <a class="filter" href="" ng-click="predicate = 'woonsituatie'; reverse=!reverse; up1=!up1">woonsituatie</a>
+                    </li>
+                </ul>
+                <hr/>
+                <span class="filter">zoeken</span>
+                <input type="text" class="form-control" ng-model="reviewFilter" placeholder="filter op..."/>
+            </div>
+        </div>
+        <a style="line-height: 10px !important" class="btn btn-woontevreden" ng-click="$state.go('api',{submenu:'dashboard',interviewid:''})">Naar
+            dashboard</a>
+        <a style="line-height: 10px !important" ng-if="$stateParams.interviewid" class="btn btn-woontevreden"
+           ng-click="$state.go('api.reviews',{interviewid:''})">Alle reviews</a>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <h1 class="homepage-title">Contactinformatie</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="contactformulier">
+            <form name="contactformulier" novalidate>
+                <div class="form-group">
+                    <textarea style="resize: none" rows="4" cols="50" type="text" name="bericht" class="form-control" id="inputbericht" placeholder="Stel je vraag of laat je mening achter (verplicht)" ng-model="contacten.bericht" required></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="email" id="inputemail" placeholder="E-mailadres (verplicht)"ng-model="contacten.emailadres" required>
+                </div>
+                <div class="form-group">
+                    <button ng-if="contactformulier.$error.required" disabled type="button" class="btn btn-woontevreden">verstuur</button>
+                    <button ng-if="!contactformulier.$error.required" id="button-meer-weten" type="button" class="btn btn-woontevreden" ng-click="updateContacten(contacten.bericht, contacten.emailadres)">verstuur</button>
+                    <p class="small" style="font-weight:400;margin-bottom: -10px"><br/>Je kunt ons ook direct e-mailen: <a href="mailto:info@woontevreden.nl">info@woontevreden.nl</a> of bellen op (020) 624 90 76.</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

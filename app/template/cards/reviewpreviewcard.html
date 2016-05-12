@@ -1,0 +1,9 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Woontevreden Reviews</h3>
+    </div>
+    <div class="panel-body">
+        <p class="review-preview" ng-repeat="a in currentPreviewReviews">{{ a.review | words:10 }}</p>
+        <p><a class="btn btn-woontevreden" ng-click="getAllReviews(WTPanelData)">Lees alle reviews</a></p>
+    </div>
+</div>

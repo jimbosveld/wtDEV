@@ -3,18 +3,19 @@
 /* Services */
 
 angular.module('myApp.services', []).
-factory('wocoRepository', function($http) {
+
+    factory('wocoRepository', function($http) {
     return {
         getAverages: function () {
-            var url = "http://api.woontevreden.nl/data/corporatiecijfers/";
+            var url = "http://controllers.woontevreden.nl/data/corporatiecijfers/";
             return $http.get(url);
         },
         getAllWocos: function () {
-            var url = "http://api.woontevreden.nl/data/corporaties"
+            var url = "http://controllers.woontevreden.nl/data/corporaties"
             return $http.get(url);
         },
         setUrl: function (specificUrl) {
-            var url = "http://api.woontevreden.nl/data/corporaties/" + specificUrl + "/reviews"
+            var url = "http://controllers.woontevreden.nl/data/corporaties/" + specificUrl + "/reviews"
             return $http.get(url);
         },
         calculateAverages: function (rankedWocosObject) {
@@ -51,7 +52,8 @@ factory('wocoRepository', function($http) {
         }
     }
 }).
-factory('chartFactory', function(){
+
+    factory('chartFactory', function(){
         return{
             getChartOptions: function(){
                 var options = {
@@ -127,6 +129,102 @@ factory('chartFactory', function(){
                     onAnimationComplete : null
                 }
                     return options;
+            }
+        }
+    }).
+
+
+    factory('apiFactory', function($http){
+//        API STANDAARDEN -- DEZE ZIJN GESCHIKT VOOR ALLE REQUESTS
+
+        var url = 'https://controllers.thebrighthouse.nl';
+        var headers = {headers: {'Content-Type': 'text/plain'}};
+        var woontevredenDataSource = "woontevreden corpodata";
+        var KWHDataSource = "woontevreden KWH";
+        var getCurrentYearWoontevreden = {"column": "CORPO_JAAR","type": "equals","value": "2012"}
+        var getCurrentYearKWH = {"column": "KWH_JAAR","type": "equals","value": "2012"}
+
+
+        return {
+
+//            INDIVIDUELE REQUEST FUNCTIONS -- WAT HEB JE NODIG? MAAK DAARVOOR HIER EEN REQUEST
+
+            getAllIds: function () {
+                var request = {
+                    "values": {
+                        "columns": [
+                            "WOCO_ID",
+                            "WOCO_NAAM"
+                        ],
+                        "limit": 0
+                    },
+                    "dataSource": woontevredenDataSource,
+                    "filters": [
+                        getCurrentYearWoontevreden
+                    ],
+                    "method": "simple values"
+                };
+                return $http.post(
+                    url,
+                    request,
+                    headers
+                )
+            },
+            getWoontevredenPanelData: function (corpoKey) {
+                var request = {
+                    "values": {
+                        "columns": [
+                            "CORPO_TOTAAL_HUURWONINGEN",
+                            "CORPO_AANTAL_FTE",
+                            "CORPO_ONZELFSTANDIG_OVERIGE_WOONEENHEDEN"
+                        ],
+                        "limit": 0
+                    },
+                    "dataSource": woontevredenDataSource,
+                    "filters": [
+
+                        {
+                            "column": "WOCO_ID",
+                            "type": "equals",
+                            "value": corpoKey
+                        },
+                        getCurrentYearWoontevreden
+                    ],
+                    "method": "simple values"
+                };
+                return $http.post(
+                    url,
+                    request,
+                    headers
+                )
+            },
+            getKWHPanelData: function (corpoKey) {
+                var request = {
+                    "values": {
+                        "columns": [
+                            "WOCO_ID",
+                            "WOCO_NAAM",
+                            "KWH_POSITIE",
+                            "KWH_OMGEVING"
+                        ],
+                        "limit": 0
+                    },
+                    "dataSource": KWHDataSource,
+                    "filters": [
+                        {
+                            "column": "WOCO_ID",
+                            "type": "equals",
+                            "value": corpoKey
+                        },
+                        getCurrentYearKWH
+                    ],
+                    "method": "simple values"
+                };
+                return $http.post(
+                    url,
+                    request,
+                    headers
+                )
             }
         }
     });

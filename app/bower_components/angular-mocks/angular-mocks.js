@@ -26,7 +26,7 @@ angular.mock = {};
  * implementation for commonly used browser apis that are hard to test, e.g. setTimeout, xhr,
  * cookies, etc...
  *
- * The api of this service is the same as that of the real {@link ng.$browser $browser}, except
+ * The controllers of this service is the same as that of the real {@link ng.$browser $browser}, except
  * that there are several helper methods available which can be used in tests.
  */
 angular.mock.$BrowserProvider = function() {
@@ -43,7 +43,7 @@ angular.mock.$Browser = function() {
   self.$$lastUrl = self.$$url; // used by url polling fn
   self.pollFns = [];
 
-  // TODO(vojta): remove this temporary api
+  // TODO(vojta): remove this temporary controllers
   self.$$completeOutstandingRequest = angular.noop;
   self.$$incOutstandingRequestCount = angular.noop;
 
@@ -972,7 +972,7 @@ angular.mock.dump = function(object) {
  * to follow and to maintain. But neither can the testing mock respond synchronously; that would
  * change the execution of the code under test. For this reason, the mock $httpBackend has a
  * `flush()` method, which allows the test to explicitly flush pending requests. This preserves
- * the async api of the backend, while allowing the test to execute synchronously.
+ * the async controllers of the backend, while allowing the test to execute synchronously.
  *
  *
  * # Unit testing with mock $httpBackend
@@ -1453,7 +1453,7 @@ function createHttpBackendMock($rootScope, $delegate, $browser) {
    * @ngdoc method
    * @name $httpBackend#verifyNoOutstandingExpectation
    * @description
-   * Verifies that all of the requests defined via the `expect` api were made. If any of the
+   * Verifies that all of the requests defined via the `expect` controllers were made. If any of the
    * requests were not made, verifyNoOutstandingExpectation throws an exception.
    *
    * Typically, you would call this method following each test case that asserts requests using an
@@ -1769,13 +1769,13 @@ angular.module('ngMockE2E', ['ng']).config(['$provide', function($provide) {
  * *Note*: For fake http backend implementation suitable for unit testing please see
  * {@link ngMock.$httpBackend unit-testing $httpBackend mock}.
  *
- * This implementation can be used to respond with static or dynamic responses via the `when` api
+ * This implementation can be used to respond with static or dynamic responses via the `when` controllers
  * and its shortcuts (`whenGET`, `whenPOST`, etc) and optionally pass through requests to the
  * real $httpBackend for specific requests (e.g. to interact with certain remote apis or to fetch
  * templates from a webserver).
  *
  * As opposed to unit-testing, in an end-to-end testing scenario or in scenario when an application
- * is being developed with the real backend api replaced with a mock, it is often desirable for
+ * is being developed with the real backend controllers replaced with a mock, it is often desirable for
  * certain category of requests to bypass the mock and issue a real http request (e.g. to fetch
  * templates or static files from the webserver). To configure the backend with this behavior
  * use the `passThrough` request handler of `when` instead of `respond`.

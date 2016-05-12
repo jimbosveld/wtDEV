@@ -6,51 +6,47 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title update-title></title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/custom.css">
+    <link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
+    <link rel="stylesheet" href="bower_components/tagsinput/dist/bootstrap-tagsinput.css">
     <!-- endbuild -->
 </head>
 <body ng-app="myApp">
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
-
-<!-- Add your site or application content here -->
-<nav class="navbar-collapse bs-navbar-collapse topnav">
-    <div class="col-sm-offset-2">
-        <ul class="nav navbar-nav">
-            <li>
-                <a class="brand" href="#">Woontevreden</a>
-            </li>
-            <li>
-                <a href="#/zoeken">Zoek je corporatie</a>
-            </li>
-            <li>
-                <a href="#/Voorwie">Voor wie is Woontevreden?</a>
-            </li>
-            <li>
-                <a href="#/OverOns">Over ons</a>
-            </li>
-            <li>
-                <a href="#/admin">admin</a>
-            </li>
-            <li ng-cloak ng-controller="AuthCtrl">
-                <a ng-show="auth.user" class="auth" href="#/admin">ingelogd als {{auth.user.email}}</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-<div class="spacer"></div>
-<div ng-view class="col-sm-12 container-fluid fadeIn"></div>
+<!--<pre>-->
+      <!--&lt;!&ndash; Here's some values to keep an eye on in the sample in order to understand $state and $stateParams &ndash;&gt;-->
+      <!--$state = {{$state.current.name}}-->
+      <!--$stateParams = {{$stateParams}}-->
+      <!--$state full url = {{ $state.$current.url.source }}-->
+      <!--&lt;!&ndash; $state.$current is not a public controllers, we are using it to-->
+           <!--display the full url for learning purposes&ndash;&gt;-->
+<!--</pre>-->
+<div ng-include="'template/navbar.html'"></div>
+<div class="container">
+    <div style="padding-bottom: 200px" ui-view></div>
+</div>
+<div ng-include="'template/footer.html'"></div>
+<div ng-cloak class="home-hero homepage-background"
+     ng-if="$state.current.name === 'homepage' ||
+              $state.current.name === 'bewonerscommissies' ||
+              $state.current.name === 'overheid' ||
+              $state.current.name === 'woningcorporaties' ||
+              $state.current.name === 'contact'">
+</div>
+<div class="gauge-wrap" data-value="50"></div>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 <script>
@@ -59,15 +55,14 @@
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-XXXXX-X');
+    ga('create', 'UA-43515224-1');
     ga('send', 'pageview');
 </script>
-
 <!--[if lt IE 9]>
 <script src="bower_components/es5-shim/es5-shim.js"></script>
 <script src="bower_components/json3/lib/json3.min.js"></script>
 <![endif]-->
-
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <!-- build:js scripts/vendor.js -->
 <!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -76,27 +71,42 @@
 <script src="bower_components/angular-resource/angular-resource.js"></script>
 <script src="bower_components/angular-cookies/angular-cookies.js"></script>
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-<script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 <script src="bower_components/firebase/firebase.js"></script>
-<script src="bower_components/angular-mocks/angular-mocks.js"></script>
-<script src="bower_components/angularfire/angularfire.js"></script>
-<script src="bower_components/angularfire/angularfire.min.js"></script>
 <script src="bower_components/firebase-simple-login/firebase-simple-login.js"></script>
-<script src="bower_components/nnnick-chartjs/Chart.min.js"></script>
-<script src="bower_components/angles/angles.js"></script>
+<script src="bower_components/mockfirebase/dist/mockfirebase.js"></script>
+<script src="bower_components/angularfire/dist/angularfire.min.js"></script>
 <script src="bower_components/chartjs/Chart.min.js"></script>
 <script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/highcharts-ng/dist/highcharts-ng.js"></script>
+<script src="bower_components/highcharts/highcharts.js"></script>
+<script src="bower_components/highcharts/highcharts-more.js"></script>
+<script src="bower_components/highcharts/modules/exporting.js"></script>
+<script src="bower_components/fitvids/jquery.fitvids.js"></script>
+<script src="bower_components/angular-truncate/src/truncate.js"></script>
+<script src="bower_components/ngmap/build/scripts/ng-map.js"></script>
+<script src="bower_components/angular-scroll/angular-scroll.min.js"></script>
+<script src="bower_components/jquery-ui/jquery-ui.js"></script>
+<script src="bower_components/d3/d3.js"></script>
+<script src="bower_components/donut-hack/dist/ng-donut.js"></script>
+<script src="bower_components/tagsinput/dist/bootstrap-tagsinput-angular.min.js"></script>
+<script src="bower_components/tagsinput/dist/bootstrap-tagsinput.min.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/api/apiDirectives.js"></script>
+<script src="scripts/api/apiControllers.js"></script>
+<script src="scripts/api/apiServices.js"></script>
+<script src="scripts/vragen/vragenController.js"></script>
+<script src="scripts/vragen/vragenDirectives.js"></script>
+<script src="scripts/gauge.js"></script>
 <script src="scripts/app.js"></script>
-<script src="scripts/directives.js"></script>
-<script src="scripts/services.js"></script>
-<script src="scripts/controllers/main.js"></script>
-<script src="scripts/controllers/generalcontrollers.js"></script>
 <script src="scripts/filters.js"></script>
+<script src="scripts/angular-fitvids.js"></script>
+<script src="scripts/wookmark.js"></script>
+<script src="scripts/admin.js"></script>
 <!-- endbuild -->
 </body>
 </html>

@@ -80,7 +80,7 @@ function shallowClearAndCopy(src, dst) {
  *
  * @param {string} url A parametrized URL template with parameters prefixed by `:` as in
  *   `/user/:username`. If you are using a URL with a port number (e.g.
- *   `http://example.com:8080/api`), it will be respected.
+ *   `http://example.com:8080/controllers`), it will be respected.
  *
  *   If you are using a url with a suffix, just add the suffix, like this:
  *   `$resource('http://example.com/resource.json')` or `$resource('http://example.com/:id.json')`

@@ -1,0 +1,41 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Corporatie info</h3>
+    </div>
+    <div class="panel-body">
+            <span>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Corporatie</th>
+                        <th style="padding-left: 25px">Gemiddeld</th>
+                    </tr>
+                    <tr>
+                        <td>Aantal woningen</td>
+                        <td class="cell">{{corpoPanelData[0].CORPO_TOTAAL_HUURWONINGEN | number}}</td>
+                        <td class="cell">{{vergeList.huur | number}}</td>
+                    </tr>
+                    <tr>
+                        <td>Aantal FTE</td>
+                        <td class="cell">{{corpoPanelData[0].CORPO_AANTAL_FTE | number:0}}</td>
+                        <td class="cell">{{vergeList.fte | number}}</td>
+                    </tr>
+                    <tr tooltip="Hier zie je het aantal woningen per voltijdmedewerker. Dit is een indicatie voor de werkdruk bij een corporatie." tooltip-placement="left">
+                        <td style="text-style: italic" >Wongingen per FTE</td>
+                        <td class="cell">{{ corpoPanelData[0].CORPO_TOTAAL_HUURWONINGEN/corpoPanelData[0].CORPO_AANTAL_FTE | number:0 }}</td>
+                        <td class="cell">{{ vergeList.huur/vergeList.fte | number:0 }}</td>
+                    </tr>
+                    <tr>
+                        <td>Gem. huurprijs (in euro's)</td>
+                        <td class="cell">{{corpoPanelData[0].CORPO_GEMIDDELDE_HUURPRIJS_PER_MAAND_PER_WOONGELEGENHEID | number:0}}</td>
+                        <td class="cell">{{vergeList.prijs | number}}</td>
+                    </tr>
+                    <tr>
+                        <td>Gem. aantal punten</td>
+                        <td class="cell">{{corpoPanelData[0].CORPO_GEMIDDELD_AANTAL_PUNTEN_WONINGWAARDERING_HUURWONINGEN_DAEB_CORPORATIE | number:0}}</td>
+                        <td class="cell">{{vergeList.punt}}</td>
+                    </tr>
+                </table>
+            </span>
+    </div>
+</div>

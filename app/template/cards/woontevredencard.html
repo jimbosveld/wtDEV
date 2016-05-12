@@ -1,0 +1,16 @@
+<div class="panel panel-default fadeIn">
+    <div class="panel-heading">
+        <h3 class="panel-title">Woontevreden</h3>
+    </div>
+    <div class="panel-body" ng-if="WTPanelData" style="text-align:center">
+        <div ng-repeat="d in wtDonutData" class="col-sm-6">
+            <h4 class="circle-text">{{d.title}}</h4>
+            <donut mousemove="mouseMove()" height="100" width="100" radius="20" colours="[d.color, '#FFFFFF', '#CC0000']"  text=d.baseValue  ng-model=d.value></donut>
+        </div>
+    </div>
+    <div class="panel-body" ng-if="!WTPanelData">
+        <p>Voor deze woningcorporatie is helaas nog niet genoeg Woontevreden data beschikbaar. Wil je graag dat je corporatie meedoet, stuur dan een berichtje via onze
+            <a ui-sref="contact">contactpagina.</a>
+        </p>
+    </div>
+</div>

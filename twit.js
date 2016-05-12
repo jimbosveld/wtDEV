@@ -1,0 +1,91 @@
+/**
+ * Created by jimbosveld on 06-11-14.
+ */
+var Twit = require('twit')
+
+var T = new Twit({
+    consumer_key:         'VyppGNUQcjTNxwLZ0tkETWVAU'
+    , consumer_secret:      'wzywovrabdBeEg7s25SpyPLMlw42T93tl3Rgh6wuHVSuwyTDKK'
+    , access_token:         '24155775-GPUjl3IvA6RatCLu9GCqUdaGAzkbj4jnpEKZAjNRs'
+    , access_token_secret:  'W02sPIRJHMmhlJG3dWWzdQblNlBsiXtoOPlRSXdFeEdZr'
+});
+
+//
+//  tweet 'hello world!'
+//
+//T.post('statuses/update', { status: 'hello world!' }, function(err, data, response) {
+//    console.log(data)
+//})
+
+//
+//  search twitter for all tweets containing the word 'banana' since Nov. 11, 2011
+//
+//T.get('search/tweets', { q: 'banana since:2011-11-11', count: 1 }, function(err, data, response) {
+//    console.log(data)
+//})
+
+//
+//  get the list of user id's that follow @tolga_tezel
+//
+//T.get('followers/ids', { screen_name: 'tolga_tezel' },  function (err, data, response) {
+//    console.log(data)
+//})
+
+//
+//  retweet a tweet with id '343360866131001345'
+//
+//T.post('statuses/retweet/:id', { id: '343360866131001345' }, function (err, data, response) {
+//    console.log(data)
+//})
+
+//
+//  destroy a tweet with id '343360866131001345'
+//
+//T.post('statuses/destroy/:id', { id: '343360866131001345' }, function (err, data, response) {
+//    console.log(data)
+//})
+
+//
+// get `funny` twitter users
+//
+//T.get('users/suggestions/:slug', { slug: 'funny' }, function (err, data, response) {
+//    console.log(data)
+//})
+
+//
+//  stream a sample of public statuses
+//
+//var stream = T.stream('statuses/sample')
+//
+//stream.on('tweet', function (tweet) {
+//    console.log(tweet)
+//})
+//
+////
+////  filter the twitter public stream by the word 'mango'.
+////
+//var stream = T.stream('statuses/filter', { track: 'mango' })
+//
+//stream.on('tweet', function (tweet) {
+//    console.log(tweet)
+//})
+//
+////
+//// filter the public stream by the latitude/longitude bounded box of San Francisco
+////
+//var sanFrancisco = [ '-122.75', '36.8', '-121.75', '37.8' ]
+//
+//var stream = T.stream('statuses/filter', { locations: sanFrancisco })
+//
+//stream.on('tweet', function (tweet) {
+//    console.log(tweet)
+//})
+//
+////
+//// filter the public stream by english tweets containing `#apple`
+////
+//var stream = T.stream('statuses/filter', { track: '#apple', language: 'en' })
+//
+//stream.on('tweet', function (tweet) {
+//    console.log(tweet)
+//})

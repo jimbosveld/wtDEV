@@ -4787,7 +4787,7 @@ jQuery.event = {
 			// If event changes its type, use the special event handlers for the changed type
 			special = jQuery.event.special[ type ] || {};
 
-			// If selector defined, determine special event api type, otherwise given type
+			// If selector defined, determine special event controllers type, otherwise given type
 			type = ( selector ? special.delegateType : special.bindType ) || type;
 
 			// Update special based on newly reset type
@@ -11385,7 +11385,7 @@ function setupModuleLoader(window) {
      *        unspecified then the module is being retrieved for further configuration.
      * @param {Function} configFn Optional configuration function for the module. Same as
      *        {@link angular.Module#config Module#config()}.
-     * @returns {module} new module with the {@link angular.Module} api.
+     * @returns {module} new module with the {@link angular.Module} controllers.
      */
     return function module(name, requires, configFn) {
       var assertNotHasOwnProperty = function(name, context) {
@@ -11861,7 +11861,7 @@ function publishExternalAPI(angular){
  * Wraps a raw DOM element or HTML string as a [jQuery](http://jquery.com) element.
  *
  * If jQuery is available, `angular.element` is an alias for the
- * [jQuery](http://api.jquery.com/jQuery/) function. If jQuery is not available, `angular.element`
+ * [jQuery](http://controllers.jquery.com/jQuery/) function. If jQuery is not available, `angular.element`
  * delegates to Angular's built-in subset of jQuery, called "jQuery lite" or "jqLite."
  *
  * <div class="alert alert-success">jqLite is a tiny, API-compatible subset of jQuery that allows
@@ -11876,40 +11876,40 @@ function publishExternalAPI(angular){
  * ## Angular's jqLite
  * jqLite provides only the following jQuery methods:
  *
- * - [`addClass()`](http://api.jquery.com/addClass/)
- * - [`after()`](http://api.jquery.com/after/)
- * - [`append()`](http://api.jquery.com/append/)
- * - [`attr()`](http://api.jquery.com/attr/)
- * - [`bind()`](http://api.jquery.com/bind/) - Does not support namespaces, selectors or eventData
- * - [`children()`](http://api.jquery.com/children/) - Does not support selectors
- * - [`clone()`](http://api.jquery.com/clone/)
- * - [`contents()`](http://api.jquery.com/contents/)
- * - [`css()`](http://api.jquery.com/css/)
- * - [`data()`](http://api.jquery.com/data/)
- * - [`empty()`](http://api.jquery.com/empty/)
- * - [`eq()`](http://api.jquery.com/eq/)
- * - [`find()`](http://api.jquery.com/find/) - Limited to lookups by tag name
- * - [`hasClass()`](http://api.jquery.com/hasClass/)
- * - [`html()`](http://api.jquery.com/html/)
- * - [`next()`](http://api.jquery.com/next/) - Does not support selectors
- * - [`on()`](http://api.jquery.com/on/) - Does not support namespaces, selectors or eventData
- * - [`off()`](http://api.jquery.com/off/) - Does not support namespaces or selectors
- * - [`one()`](http://api.jquery.com/one/) - Does not support namespaces or selectors
- * - [`parent()`](http://api.jquery.com/parent/) - Does not support selectors
- * - [`prepend()`](http://api.jquery.com/prepend/)
- * - [`prop()`](http://api.jquery.com/prop/)
- * - [`ready()`](http://api.jquery.com/ready/)
- * - [`remove()`](http://api.jquery.com/remove/)
- * - [`removeAttr()`](http://api.jquery.com/removeAttr/)
- * - [`removeClass()`](http://api.jquery.com/removeClass/)
- * - [`removeData()`](http://api.jquery.com/removeData/)
- * - [`replaceWith()`](http://api.jquery.com/replaceWith/)
- * - [`text()`](http://api.jquery.com/text/)
- * - [`toggleClass()`](http://api.jquery.com/toggleClass/)
- * - [`triggerHandler()`](http://api.jquery.com/triggerHandler/) - Passes a dummy event object to handlers.
- * - [`unbind()`](http://api.jquery.com/unbind/) - Does not support namespaces
- * - [`val()`](http://api.jquery.com/val/)
- * - [`wrap()`](http://api.jquery.com/wrap/)
+ * - [`addClass()`](http://controllers.jquery.com/addClass/)
+ * - [`after()`](http://controllers.jquery.com/after/)
+ * - [`append()`](http://controllers.jquery.com/append/)
+ * - [`attr()`](http://controllers.jquery.com/attr/)
+ * - [`bind()`](http://controllers.jquery.com/bind/) - Does not support namespaces, selectors or eventData
+ * - [`children()`](http://controllers.jquery.com/children/) - Does not support selectors
+ * - [`clone()`](http://controllers.jquery.com/clone/)
+ * - [`contents()`](http://controllers.jquery.com/contents/)
+ * - [`css()`](http://controllers.jquery.com/css/)
+ * - [`data()`](http://controllers.jquery.com/data/)
+ * - [`empty()`](http://controllers.jquery.com/empty/)
+ * - [`eq()`](http://controllers.jquery.com/eq/)
+ * - [`find()`](http://controllers.jquery.com/find/) - Limited to lookups by tag name
+ * - [`hasClass()`](http://controllers.jquery.com/hasClass/)
+ * - [`html()`](http://controllers.jquery.com/html/)
+ * - [`next()`](http://controllers.jquery.com/next/) - Does not support selectors
+ * - [`on()`](http://controllers.jquery.com/on/) - Does not support namespaces, selectors or eventData
+ * - [`off()`](http://controllers.jquery.com/off/) - Does not support namespaces or selectors
+ * - [`one()`](http://controllers.jquery.com/one/) - Does not support namespaces or selectors
+ * - [`parent()`](http://controllers.jquery.com/parent/) - Does not support selectors
+ * - [`prepend()`](http://controllers.jquery.com/prepend/)
+ * - [`prop()`](http://controllers.jquery.com/prop/)
+ * - [`ready()`](http://controllers.jquery.com/ready/)
+ * - [`remove()`](http://controllers.jquery.com/remove/)
+ * - [`removeAttr()`](http://controllers.jquery.com/removeAttr/)
+ * - [`removeClass()`](http://controllers.jquery.com/removeClass/)
+ * - [`removeData()`](http://controllers.jquery.com/removeData/)
+ * - [`replaceWith()`](http://controllers.jquery.com/replaceWith/)
+ * - [`text()`](http://controllers.jquery.com/text/)
+ * - [`toggleClass()`](http://controllers.jquery.com/toggleClass/)
+ * - [`triggerHandler()`](http://controllers.jquery.com/triggerHandler/) - Passes a dummy event object to handlers.
+ * - [`unbind()`](http://controllers.jquery.com/unbind/) - Does not support namespaces
+ * - [`val()`](http://controllers.jquery.com/val/)
+ * - [`wrap()`](http://controllers.jquery.com/wrap/)
  *
  * ## jQuery/jqLite Extras
  * Angular also provides the following additional methods and events to both jQuery and jqLite:
@@ -12028,7 +12028,7 @@ function JQLite(element) {
   }
   if (!(this instanceof JQLite)) {
     if (isString(element) && element.charAt(0) != '<') {
-      throw jqLiteMinErr('nosel', 'Looking up elements via selectors is not supported by jqLite! See: http://docs.angularjs.org/api/angular.element');
+      throw jqLiteMinErr('nosel', 'Looking up elements via selectors is not supported by jqLite! See: http://docs.angularjs.org/controllers/angular.element');
     }
     return new JQLite(element);
   }
@@ -14015,7 +14015,7 @@ function Browser(window, document, $log, $sniffer) {
   var outstandingRequestCount = 0;
   var outstandingRequestCallbacks = [];
 
-  // TODO(vojta): remove this temporary api
+  // TODO(vojta): remove this temporary controllers
   self.$$completeOutstandingRequest = completeOutstandingRequest;
   self.$$incOutstandingRequestCount = function() { outstandingRequestCount++; };
 
@@ -14114,11 +14114,11 @@ function Browser(window, document, $log, $sniffer) {
    *
    * SETTER:
    * With at least one argument, this method sets url to new value.
-   * If html5 history api supported, pushState/replaceState is used, otherwise
+   * If html5 history controllers supported, pushState/replaceState is used, otherwise
    * location.href/location.replace is used.
    * Returns its own instance to allow chaining
    *
-   * NOTE: this api is intended for use only by the $location service. Please use the
+   * NOTE: this controllers is intended for use only by the $location service. Please use the
    * {@link ng.$location $location service} to change url.
    *
    * @param {string} url New url (when used as setter)
@@ -14186,7 +14186,7 @@ function Browser(window, document, $log, $sniffer) {
    *
    * The listener gets called with new url as parameter.
    *
-   * NOTE: this api is intended for use only by the $location service. Please use the
+   * NOTE: this controllers is intended for use only by the $location service. Please use the
    * {@link ng.$location $location service} to monitor url changes in angular apps.
    *
    * @param {function(string)} listener Listener function to be called when url changes.
@@ -14199,7 +14199,7 @@ function Browser(window, document, $log, $sniffer) {
       // don't fire popstate when user change the address bar and don't fire hashchange when url
       // changed by push/replaceState
 
-      // html5 history api - popstate event
+      // html5 history controllers - popstate event
       if ($sniffer.history) jqLite(window).on('popstate', fireUrlChange);
       // hashchange event
       if ($sniffer.hashchange) jqLite(window).on('hashchange', fireUrlChange);
@@ -14827,7 +14827,7 @@ function $TemplateCacheProvider() {
  * Directives Guide} for an example.
  *
  * You can specify `template` as a string representing the template or as a function which takes
- * two arguments `tElement` and `tAttrs` (described in the `compile` function api below) and
+ * two arguments `tElement` and `tAttrs` (described in the `compile` function controllers below) and
  * returns a string value representing the template.
  *
  *
@@ -14837,7 +14837,7 @@ function $TemplateCacheProvider() {
  * is loaded.
  *
  * You can specify `templateUrl` as a string representing the URL or as a function which takes two
- * arguments `tElement` and `tAttrs` (described in the `compile` function api below) and returns
+ * arguments `tElement` and `tAttrs` (described in the `compile` function controllers below) and returns
  * a string value representing the url.  In either case, the template URL is passed through {@link
  * api/ng.$sce#getTrustedResourceUrl $sce.getTrustedResourceUrl}.
  *
@@ -14871,7 +14871,7 @@ function $TemplateCacheProvider() {
  * The compile function deals with transforming the template DOM. Since most directives do not do
  * template transformation, it is not used often. Examples that require compile functions are
  * directives that transform template DOM, such as {@link
- * api/ng.directive:ngRepeat ngRepeat}, or load the contents
+ * controllers/ng.directive:ngRepeat ngRepeat}, or load the contents
  * asynchronously, such as {@link ngRoute.directive:ngView ngView}. The
  * compile function takes the following arguments.
  *
@@ -17904,7 +17904,7 @@ function createHttpBackend($browser, createXhr, $browserDefer, callbacks, rawDoc
       });
 
       // In IE6 and 7, this might be called synchronously when xhr.send below is called and the
-      // response is in the cache. the promise api will ensure that to the app code the api is
+      // response is in the cache. the promise controllers will ensure that to the app code the controllers is
       // always async
       xhr.onreadystatechange = function() {
         // onreadystatechange might get called multiple times with readyState === 4 on mobile webkit caused by
@@ -18184,7 +18184,7 @@ function $InterpolateProvider() {
           throw $interpolateMinErr('noconcat',
               "Error while interpolating: {0}\nStrict Contextual Escaping disallows " +
               "interpolations that concatenate multiple expressions when a trusted value is " +
-              "required.  See http://docs.angularjs.org/api/ng.$sce", text);
+              "required.  See http://docs.angularjs.org/controllers/ng.$sce", text);
       }
 
       if (!mustHaveExpression  || hasInterpolation) {
@@ -18447,7 +18447,7 @@ function $IntervalProvider() {
  *
  * @description
  * $locale service provides localization rules for various Angular components. As of right now the
- * only public api is:
+ * only public controllers is:
  *
  * * `id` – `{string}` – locale id formatted as `languageId-countryId` (e.g. `en-us`)
  */
@@ -18757,7 +18757,7 @@ function LocationHashbangUrl(appBase, hashPrefix) {
 
 /**
  * LocationHashbangUrl represents url
- * This object is exposed as $location service when html5 history api is enabled but the browser
+ * This object is exposed as $location service when html5 history controllers is enabled but the browser
  * does not support it.
  *
  * @constructor
@@ -20552,7 +20552,7 @@ function $ParseProvider() {
    *
    * If the unwrapping is enabled, Angular will log a warning about each expression that unwraps a
    * promise (to reduce the noise, each expression is logged only once). To disable this logging use
-   * `$parseProvider.logPromiseWarnings(false)` api.
+   * `$parseProvider.logPromiseWarnings(false)` controllers.
    *
    *
    * @param {boolean=} value New value.
@@ -20691,7 +20691,7 @@ function $ParseProvider() {
  * comes in the way of guarantees that promise and deferred APIs make, see
  * https://github.com/kriskowal/uncommonjs/blob/master/promises/specification.md.
  *
- * Additionally the promise api allows for composition that is very hard to do with the
+ * Additionally the promise controllers allows for composition that is very hard to do with the
  * traditional callback ([CPS](http://en.wikipedia.org/wiki/Continuation-passing_style)) approach.
  * For more on this please see the [Q documentation](https://github.com/kriskowal/q) especially the
  * section on serial or parallel joining of promises.
@@ -20989,7 +20989,7 @@ function qFactory(nextTick, exceptionHandler) {
    * @function
    *
    * @description
-   * Creates a promise that is resolved as rejected with the specified `reason`. This api should be
+   * Creates a promise that is resolved as rejected with the specified `reason`. This controllers should be
    * used to forward rejection in a chain of promises. If you are dealing with the last promise in
    * a promise chain, you don't need to worry about it.
    *
@@ -23113,7 +23113,7 @@ function $SceProvider() {
       throw $sceMinErr('iequirks',
         'Strict Contextual Escaping does not support Internet Explorer version < 9 in quirks ' +
         'mode.  You can fix this by adding the text <!doctype html> to the top of your HTML ' +
-        'document.  See http://docs.angularjs.org/api/ng.$sce for more information.');
+        'document.  See http://docs.angularjs.org/controllers/ng.$sce for more information.');
     }
 
     var sce = copy(SCE_CONTEXTS);
@@ -23442,7 +23442,7 @@ function $SceProvider() {
  * @requires $window
  * @requires $document
  *
- * @property {boolean} history Does the browser support html5 history api ?
+ * @property {boolean} history Does the browser support html5 history controllers ?
  * @property {boolean} hashchange Does the browser support hashchange event ?
  * @property {boolean} transitions Does the browser support CSS transition events ?
  * @property {boolean} animations Does the browser support CSS animation events ?
@@ -23631,7 +23631,7 @@ var originUrl = urlResolve(window.location.href, true);
  * Parsing means that the anchor node's host, hostname, protocol, port, pathname and related
  * properties are all populated to reflect the normalized URL.  This approach has wide
  * compatibility - Safari 1+, Mozilla 1+, Opera 7+,e etc.  See
- * http://www.aptana.com/reference/html/api/HTMLAnchorElement.html
+ * http://www.aptana.com/reference/html/controllers/HTMLAnchorElement.html
  *
  * Implementation Notes for IE
  * ---------------------------
@@ -23651,7 +23651,7 @@ var originUrl = urlResolve(window.location.href, true);
  *
  * References:
  *   http://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement
- *   http://www.aptana.com/reference/html/api/HTMLAnchorElement.html
+ *   http://www.aptana.com/reference/html/controllers/HTMLAnchorElement.html
  *   http://url.spec.whatwg.org/#urlutils
  *   https://github.com/angular/angular.js/pull/2902
  *   http://james.padolsey.com/javascript/parsing-urls-with-the-dom/

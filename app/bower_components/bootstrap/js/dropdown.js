@@ -146,9 +146,9 @@
   // ===================================
 
   $(document)
-    .on('click.bs.dropdown.data-api', clearMenus)
-    .on('click.bs.dropdown.data-api', '.dropdown form', function (e) { e.stopPropagation() })
-    .on('click.bs.dropdown.data-api'  , toggle, Dropdown.prototype.toggle)
-    .on('keydown.bs.dropdown.data-api', toggle + ', [role=menu]' , Dropdown.prototype.keydown)
+    .on('click.bs.dropdown.data-controllers', clearMenus)
+    .on('click.bs.dropdown.data-controllers', '.dropdown form', function (e) { e.stopPropagation() })
+    .on('click.bs.dropdown.data-controllers'  , toggle, Dropdown.prototype.toggle)
+    .on('keydown.bs.dropdown.data-controllers', toggle + ', [role=menu]' , Dropdown.prototype.keydown)
 
 }(jQuery);

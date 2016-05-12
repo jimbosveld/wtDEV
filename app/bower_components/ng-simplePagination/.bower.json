@@ -1,0 +1,25 @@
+{
+  "name": "ng-simplePagination",
+  "main": "./simplePagination.js",
+  "keywords": [
+    "angular",
+    "pagination",
+    "static",
+    "paginate",
+    "pages"
+  ],
+  "dependencies": {
+    "angular": "*"
+  },
+  "homepage": "https://github.com/svileng/ng-simplePagination",
+  "_release": "f2f912a901",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "f2f912a901af74d784fbfd2bddbb18abda9c09ef"
+  },
+  "_source": "git://github.com/svileng/ng-simplePagination.git",
+  "_target": "*",
+  "_originalSource": "ng-simplePagination",
+  "_direct": true
+}

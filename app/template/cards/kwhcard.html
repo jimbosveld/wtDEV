@@ -1,0 +1,11 @@
+<div class="panel panel-default" ng-if="KWHPanelData">
+    <div class="panel-heading">
+        <h3 class="panel-title">KWH ratings</h3>
+    </div>
+    <div class="panel-body" style="text-align:center">
+        <div ng-repeat="d in kwhDonutData" class="col-sm-6">
+            <h4 class="circle-text">{{d.title}}</h4>
+            <donut text=d.baseValue height="100" width="100" radius="15" mousemove="" colours="[d.color, '#FFFFFF']" ng-model=d.value></donut>
+        </div>
+    </div>
+</div>

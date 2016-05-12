@@ -1,0 +1,16 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Contactinformatie</h3>
+    </div>
+    <div class="panel-body">
+        <p>{{WTInfoPanelData.naam}}</p>
+
+        <p>{{WTInfoPanelData.adres}}</p>
+
+        <p>{{WTInfoPanelData.postcode}}</p>
+
+        <p>{{WTInfoPanelData.plaats | lowercase | capitalize}}</p>
+
+        <p ng-if="WTInfoPanelData.url"><a target="_blank" href="{{WTInfoPanelData.url}}">Website</a></p>
+    </div>
+</div>

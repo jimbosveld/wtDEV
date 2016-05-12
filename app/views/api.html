@@ -1,0 +1,17 @@
+<div data-loading-reverse class="spinner"></div>
+
+<div data-loading>
+    <div class="row naam-bar">
+        <h1 class="homepage-title" ng-controller="vergelijkController">{{corpoPanelData[0].WOCO_NAAM}}</h1>
+    </div>
+    <div class="custom-masonry" ng-if="!currentReviews">
+        <div class="custom-masonry-item fadeIn" ng-include="'template/cards/woontevredencard.html'"></div>
+        <div ng-controller="getAllReviewController" class="custom-masonry-item fadeIn" ng-if="WTPanelData" ng-include="'template/cards/reviewpreviewcard.html'"></div>
+        <div ng-controller="kwhController" class="custom-masonry-item fadeIn" ng-include="'template/cards/kwhcard.html'"></div>
+        <div ng-controller="vergelijkController" class="custom-masonry-item fadeIn" ng-include="'template/cards/corpodatacardnew.html'"></div>
+        <div ng-controller="wtInfoDataController" class="custom-masonry-item fadeIn" ng-include="'template/cards/infodatacard.html'"></div>
+        <div ng-if="WTInfoPanelData.facebook || WTInfoPanelData.twitter" class="custom-masonry-item fadeIn" ng-include="'template/cards/socialcard.html'"></div>
+        <div ng-if="WTInfoPanelData.jaarverslag_2013" class="custom-masonry-item fadeIn" ng-include="'template/cards/jaarverslagcard.html'"></div>
+    </div>
+    <div ui-view></div>
+</div>
